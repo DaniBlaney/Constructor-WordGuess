@@ -120,3 +120,6 @@ function winGame() {
 })
 
 }
+startGame();
+chooseRandomWord();
+guessWord();
