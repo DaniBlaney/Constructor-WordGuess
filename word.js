@@ -8,3 +8,7 @@ var Word = function (word) {
           var currentLetter = new Letter(word[i]);
           lettersBank.push(currentLetter);
       }
+      return lettersBank;
+    }
+    this.letters = this.buildWord(word);
+    this.chosenWord = word;
