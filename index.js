@@ -19,6 +19,7 @@ function chooseRandomWord() {
 
   chosenWord = new Word(randomWord);
 }
+
 function guessWord() {
 
   if (guesses > 0 && points < 5) {
@@ -68,6 +69,30 @@ function guessWord() {
         guessWord();
 
     });
+  }
+
 }
 
+function loseGame() {
+  console.log("GAME OVER!");
+  inquirer.prompt([
+      {
+          name: "confirm",
+          type: "confirm",
+          message: "Play again?",
+          default: true
+      }
+  ])
+      .then(function (inquirerResponse) {
+          if (inquirerResponse.confirm) {
+              guesses = 10;
+              points = 0;
+              chooseRandomWord();
+              guessWord();
+          }
+          else {
+              console.log("You win! NOT");
+              process.exit();
+          }
+      })
 }
