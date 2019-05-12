@@ -10,3 +10,6 @@ var randomWord;
 var chosenWord;
 
 function startGame() {
+  console.log("It's time to guess Marvel characters!");
+}
+
