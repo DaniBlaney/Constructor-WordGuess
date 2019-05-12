@@ -55,11 +55,10 @@ function guessWord() {
           points++;
 
           if (points < 5) {
-              console.log("CORRECT! Next character!");
-              chooseRandomWord();
-          }else {
-            winGame();
-        }
+              // console.log("CORRECT! Next character!");
+              winGame();
+            }
+
       }
 
         if (guesses === 0) {
