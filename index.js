@@ -96,3 +96,27 @@ function loseGame() {
           }
       })
 }
+
+function winGame() {
+  console.log("YOU WON!")
+  inquirer.prompt([
+    {
+        name: "confirm",
+        type: "confirm",
+        message: "Play again?",
+        default: true
+    }
+]).then(function (inquirerResponse) {
+  if (inquirerResponse.confirm) {
+      guesses = 10;
+      points = 0;
+      chooseRandomWord();
+      guessWord();
+  }
+  else {
+      console.log("See ya next time!")
+      process.exit();
+  }
+})
+
+}
