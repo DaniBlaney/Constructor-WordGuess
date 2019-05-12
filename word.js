@@ -12,3 +12,11 @@ var Word = function (word) {
     }
     this.letters = this.buildWord(word);
     this.chosenWord = word;
+
+    this.checkGuess = function (guess) {
+
+      for (var i = 0; i < this.letters.length; i++) {
+          this.letters[i].letterGuess(guess);
+
+      }
+  }
