@@ -40,3 +40,34 @@ function guessWord() {
         var guess = guessedLetter.txt;
 
         chosenWord.checkGuess(guess);
+        if (randomWord.toLowerCase().indexOf(guess.toLowerCase()) === -1) {
+          guesses--;
+          console.log("INCORRECT! " + guesses + " guesses remaining")
+        }else {
+          if (points < 5) {
+          console.log("CORRECT!")
+          }
+        }
+        if (randomWord === chosenWord.display()) {
+          console.log(chosenWord.display());
+          guesses = 10;
+          points++;
+
+          if (points < 5) {
+              console.log("CORRECT! Next character!");
+              chooseRandomWord();
+          }else {
+            winGame();
+        }
+      }
+
+        if (guesses === 0) {
+            loseGame();
+        }
+
+        guessWord();
+
+    });
+}
+
+}
